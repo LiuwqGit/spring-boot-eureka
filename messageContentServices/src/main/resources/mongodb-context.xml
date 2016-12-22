@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/context   
+          http://www.springframework.org/schema/context/spring-context.xsd   
+          http://www.springframework.org/schema/data/mongo   
+          http://www.springframework.org/schema/data/mongo/spring-mongo.xsd   
+          http://www.springframework.org/schema/beans   
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<mongo:mongo-client id="mongo"
+		replica-set="10.15.0.74:27017,10.15.0.75:27017,10.15.0.76:27017"
+		credentials="wxyyit:wxyyit2016%@dalong">
+		<mongo:client-options connect-timeout="10000"
+			socket-timeout="1000" max-wait-time="2000" socket-keep-alive="true" />
+	</mongo:mongo-client>
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongoDbFactory" />
+	</bean>
+	<bean id="mongoDbFactory"
+		class="org.springframework.data.mongodb.core.SimpleMongoDbFactory">
+		<constructor-arg index="0" ref="mongo" />
+		<constructor-arg index="1" value="dalong" />
+	</bean>
+	<mongo:mapping-converter id="converter" />
+	<mongo:mapping-converter id="mongoConverter"
+		base-package="org.baeldung.converter">
+		<mongo:custom-converters base-package="org.baeldung.converter" />
+	</mongo:mapping-converter>
+	<bean id="gridFsTemplate" class="org.springframework.data.mongodb.gridfs.GridFsTemplate">
+		<constructor-arg ref="mongoDbFactory" />
+		<constructor-arg ref="mongoConverter" />
+	</bean>
+</beans>
