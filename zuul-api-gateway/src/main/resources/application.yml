@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: zuul-api-gatewary
+server:
+  port: 8999
+eureka:
+  instance:
+    hostname:localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8900/eureka/

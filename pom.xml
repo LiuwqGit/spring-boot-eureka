@@ -17,6 +17,8 @@
   	<module>messageContentEntity</module>
   	<module>messageContentServices</module>
   	<module>eureka-server</module>
+  	<module>zuulapigateway</module>
+  	<module>zuul-api-gateway</module>
   </modules>
   
     <properties> 
