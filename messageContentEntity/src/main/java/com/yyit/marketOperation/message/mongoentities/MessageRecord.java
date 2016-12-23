@@ -3,7 +3,9 @@ package com.yyit.marketOperation.message.mongoentities;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection="messageRecord")
 public class MessageRecord {
 	@Id
 	private String id; // ObjectId,可以作为记录id

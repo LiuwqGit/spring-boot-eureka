@@ -7,7 +7,7 @@
     <version>Brixton.SR6</version>
   </parent>
   
-  <groupId>com.yonyouit.weixinqiang</groupId>
+  <groupId>com.yyit.marketOperation</groupId>
   <artifactId>messageContent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
