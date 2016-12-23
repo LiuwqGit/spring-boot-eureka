@@ -1,4 +1,4 @@
-package com.yyit.marketOperation.message.config;
+package com.yyit.marketOperation.message;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;

@@ -1,4 +1,4 @@
-package com.yyit.marketOperation.message.apigateway;
+package com.yyit.marketOperation.message;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
