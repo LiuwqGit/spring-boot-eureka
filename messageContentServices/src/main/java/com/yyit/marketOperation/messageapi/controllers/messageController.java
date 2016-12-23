@@ -18,6 +18,9 @@ public class messageController {
 	public Object sendmessage() {
 		Map<String, Object> map = new HashMap<String, Object>();
 
+		map.put("errmsg", "message");
+		map.put("errcode", 0);
+		map.put("data", "{}");
 		
 		return map;
 
