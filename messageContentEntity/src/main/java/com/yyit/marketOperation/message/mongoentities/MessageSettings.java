@@ -11,17 +11,22 @@ public class MessageSettings {
 
 	@Id
 	private String id;//
-	private Boolean filterOn;// 是否设置过滤字段， 0 false 不设置，1true 设置
-	private List<String> filterfield;//过滤字段。
-	private Date filterStartTime;///过滤开始时间
-	private Date filterEndTime;////过滤结束时间
-	private Date operationTime;//操作的时间
+	private Boolean auditMessage;//评论审批，审核消息，开启审核，默认不上墙。关闭，默认上墙。
 	
+	private Boolean filterOn;// 是否启用过滤字段， 0 false 不启用，1true 启用
+	private List<String> filterfield;//过滤字段。 
+	private Date operationTime;//操作的时间
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public Boolean getAuditMessage() {
+		return auditMessage;
+	}
+	public void setAuditMessage(Boolean auditMessage) {
+		this.auditMessage = auditMessage;
 	}
 	public Boolean getFilterOn() {
 		return filterOn;
@@ -35,22 +40,11 @@ public class MessageSettings {
 	public void setFilterfield(List<String> filterfield) {
 		this.filterfield = filterfield;
 	}
-	public Date getFilterStartTime() {
-		return filterStartTime;
-	}
-	public void setFilterStartTime(Date filterStartTime) {
-		this.filterStartTime = filterStartTime;
-	}
-	public Date getFilterEndTime() {
-		return filterEndTime;
-	}
-	public void setFilterEndTime(Date filterEndTime) {
-		this.filterEndTime = filterEndTime;
-	}
 	public Date getOperationTime() {
 		return operationTime;
 	}
 	public void setOperationTime(Date operationTime) {
 		this.operationTime = operationTime;
 	}
+	 
 }
