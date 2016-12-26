@@ -118,7 +118,7 @@ public class MessageRecordController {
 		return res;
 	}
 
-	@RequestMapping(value = "/delmsg", method = RequestMethod.POST)
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public Object deletemsg(@RequestBody SetMsgStatusVO setdelete) {
 		ResponseEntity res = new ResponseEntity();
 		Map<String, Object> data = new HashMap<String, Object>();
