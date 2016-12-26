@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class MessageRecord {
 	@Id
 	private String id; // ObjectId,可以作为记录id
+	private String meetingId; //会议ID
 	private String msgContent;// 消息内容
 	private int msgType;// 消息类型
 	private Date sendTime;// 消息发送时间 
@@ -17,6 +18,14 @@ public class MessageRecord {
 	private String senderImage;//发送消息人员图片
 	private Boolean onthewallStatus;//上墙状态 0 false 未上墙， 1 true 已上墙
 	private Boolean isDeleted;//删除状态 0 false 未删除， 1 true 已删除
+
+	public String getMeetingId() {
+		return meetingId;
+	}
+
+	public void setMeetingId(String meetingId) {
+		this.meetingId = meetingId;
+	}
 
 	public String getId() {
 		return id;

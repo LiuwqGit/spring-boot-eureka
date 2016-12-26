@@ -6,12 +6,19 @@ package com.yyit.marketOperation.message.entities;
  */
 public class MessageVO {
 
+	private String meetingId;//会议ID
 	private String msgContent;// 消息内容
 	private int msgType;// 消息类型
 	private String senderName;//发送消息的人员姓名
 	private String senderId;//发送消息的人员唯一Id
 	private String senderImage;//发送消息人员图片
 	
+	public String getMeetingId() {
+		return meetingId;
+	}
+	public void setMeetingId(String meetingId) {
+		this.meetingId = meetingId;
+	}
 	public String getMsgContent() {
 		return msgContent;
 	}

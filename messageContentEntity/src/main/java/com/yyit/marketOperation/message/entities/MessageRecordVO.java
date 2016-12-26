@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class MessageRecordVO {
 	private String id; // ObjectId,可以作为记录id
+	private String meetingId;//会议ID
 	private String msgContent;// 消息内容
 	private int msgType;// 消息类型
 	private Date sendTime;// 消息发送时间 
@@ -19,6 +20,14 @@ public class MessageRecordVO {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+	
+	public String getMeetingId() {
+		return meetingId;
+	}
+
+	public void setMeetingId(String meetingId) {
+		this.meetingId = meetingId;
 	}
 
 	public String getMsgContent() {
