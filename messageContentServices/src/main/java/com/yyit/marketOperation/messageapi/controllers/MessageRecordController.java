@@ -18,6 +18,9 @@ import com.yyit.marketOperation.message.entities.SetMsgStatusVO;
 import com.yyit.marketOperation.message.responseenitities.ResponseEntity;
 import com.yyit.marketOperation.message.services.MessageRecordService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 @RestController
 @RequestMapping(value = "api/message")
 public class MessageRecordController {
@@ -38,7 +41,9 @@ public class MessageRecordController {
 	 * @return
 	 */
 	@RequestMapping(value = "/send", method = RequestMethod.POST)
-	public Object sendmessage(@RequestBody MessageVO messageVO) {
+	@ApiOperation(value = "send message", httpMethod = "POST", response = Object.class, notes = "send message info")
+	public Object sendmessage(
+			@ApiParam(required = true, name = "paramData", value = "message json data") @RequestBody MessageVO messageVO) {
 
 		ResponseEntity res = new ResponseEntity();
 		Map<String, Object> data = new HashMap<String, Object>();
