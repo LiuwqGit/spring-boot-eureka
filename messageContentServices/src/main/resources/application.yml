@@ -1,13 +1,13 @@
 server:
-  port: 8903
+  port: 8911
 spring:
   application:
     name: messagecontent    # 项目名称尽量用小写
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8900/eureka/    # 指定注册中心的地址
+      defaultZone: http://ds:8761/eureka/ ,http://ds:8762/eureka/   # 指定注册中心的地址
   instance:
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    hostname: localhost
+    hostname: ds
