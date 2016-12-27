@@ -1,5 +1,5 @@
 server:
-  port: 8900
+  port: 8761
 spring:
   application:
     name: eureka-server
@@ -12,4 +12,4 @@ eureka:
   instance:
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    hostname: localhost
+    hostname: ds

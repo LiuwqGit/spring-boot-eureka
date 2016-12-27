@@ -6,8 +6,8 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8900/eureka/
+      defaultZone: http://ds:8761/eureka/,http://ds:8762/eureka/
   instance:
     metadataMap:
       instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    hostname: localhost
+    hostname: ds
