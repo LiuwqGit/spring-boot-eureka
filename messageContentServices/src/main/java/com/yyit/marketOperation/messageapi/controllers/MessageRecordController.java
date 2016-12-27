@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.yyit.marketOperation.message.entities.FilterVO;
+import com.yyit.marketOperation.message.entities.FilterSeachVO;
 import com.yyit.marketOperation.message.entities.MessageRecordVO;
 import com.yyit.marketOperation.message.entities.MessageVO;
 import com.yyit.marketOperation.message.entities.ReqConditionVO;
@@ -86,7 +86,7 @@ public class MessageRecordController {
 	 * @return
 	 */
 	@RequestMapping(value = "/contentlist", method = RequestMethod.POST)
-	public Object contentList(@RequestBody FilterVO filterVO) {
+	public Object contentList(@RequestBody FilterSeachVO filterVO) {
 		ResponseEntity res = new ResponseEntity();
 		Map<String, Object> data = new HashMap<String, Object>();
 

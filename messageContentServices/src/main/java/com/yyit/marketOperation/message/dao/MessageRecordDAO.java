@@ -8,14 +8,13 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.CriteriaDefinition;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.mongodb.WriteResult;
-import com.yyit.marketOperation.message.entities.FilterVO;
+import com.yyit.marketOperation.message.entities.FilterSeachVO;
 import com.yyit.marketOperation.message.entities.MessageRecordVO;
 import com.yyit.marketOperation.message.entities.ReqConditionVO;
 import com.yyit.marketOperation.message.entities.SetMsgStatusVO;
@@ -71,7 +70,7 @@ public class MessageRecordDAO {
 	 * @param filterVO
 	 * @return
 	 */
-	public List<MessageRecordVO> getMessageList(FilterVO filterVO) {
+	public List<MessageRecordVO> getMessageList(FilterSeachVO filterVO) {
 		List<MessageRecordVO> list = new ArrayList<MessageRecordVO>();
 
 		Query query = new Query(Criteria.where("MeetingId").is(filterVO.getMeetingId()));

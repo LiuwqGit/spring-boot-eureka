@@ -1,5 +1,7 @@
 package com.yyit.marketOperation.message.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -9,6 +11,7 @@ import org.springframework.data.mongodb.gridfs.GridFsTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.mongodb.WriteResult;
+import com.yyit.marketOperation.message.entities.FilterSetVO;
 import com.yyit.marketOperation.message.mongoentities.MessageSettings;
 
 /**
@@ -83,23 +86,25 @@ public class MessageSettingsDAO {
 		return false;
 
 	}
-	
+
 	/**
 	 * 设置过滤词
 	 * 
-	 * @param meetingId
-	 * @param value
+	 * @param set
 	 * @return
 	 */
-	public Boolean commentSet1(String meetingId, Boolean value,) {
+	public Boolean setFilter(FilterSetVO set) {
+		String meetingId = set.getMeetingId();
+		Boolean filterOn = set.getFilterOn();
+		List<String> value = set.getFilterField();
 		Query query = new Query(Criteria.where("meetingId").is(meetingId));
 		Update update = new Update();
-		update.set("approveOn", value);
+		update.set("filterOn", filterOn);
+		update.addToSet("filterfield", value);
 		WriteResult wr = mongoTemplate.updateFirst(query, update, MessageSettings.class);
 		if (wr.getN() > 0) {
 			return true;
 		}
 		return false;
-
 	}
 }

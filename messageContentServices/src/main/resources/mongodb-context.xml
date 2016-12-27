@@ -9,7 +9,7 @@
           http://www.springframework.org/schema/beans   
           http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<mongo:mongo-client id="mongo"
-		replica-set="10.15.0.74:27017,10.15.0.75:27017,10.15.0.76:27017"
+		replica-set="10.10.17.8:27017,10.10.17.9:27017,10.10.17.10:27017"
 		credentials="wxyyit:wxyyit2016%@dalong">
 		<mongo:client-options connect-timeout="10000"
 			socket-timeout="1000" max-wait-time="2000" socket-keep-alive="true" />

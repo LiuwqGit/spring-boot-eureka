@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.yyit.marketOperation.message.dao.MessageRecordDAO;
 import com.yyit.marketOperation.message.dao.MessageSettingsDAO;
-import com.yyit.marketOperation.message.entities.FilterVO;
+import com.yyit.marketOperation.message.entities.FilterSeachVO;
 import com.yyit.marketOperation.message.entities.MessageRecordVO;
 import com.yyit.marketOperation.message.entities.MessageVO;
 import com.yyit.marketOperation.message.entities.ReqConditionVO;
@@ -74,7 +74,7 @@ public class MessageRecordService {
 	 * @param filterVO
 	 * @return
 	 */
-	public List<MessageRecordVO> getMessageList(FilterVO filterVO) {
+	public List<MessageRecordVO> getMessageList(FilterSeachVO filterVO) {
 		List<MessageRecordVO> list = new ArrayList<>();
 		list = messageRecordDao.getMessageList(filterVO);
 		return list;
